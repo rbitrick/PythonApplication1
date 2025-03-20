@@ -40,7 +40,7 @@ def withdraw(balance):
         if amount > balance:
             print("Insufficent Funds")
         elif amount < 0:
-            print(f"Invalid Option: {amount}") # Need to handle a non float input such as ENTER
+            print(f"Invalid Option: {amount}") 
         elif amount == 0:
             return 0
         else:
