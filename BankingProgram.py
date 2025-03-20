@@ -12,9 +12,12 @@ def deposit():
     os.system("cls")
     validoption = False
     while validoption != True:
-        print("***********************")
-        amount = float(input("Enter amount to deposit or 0 to exit: "))
-        print("***********************")
+        try: # V2 - 03/19/2025 - RB - try/except on non float inputs
+            print("***********************")
+            amount = float(input("Enter amount to deposit or 0 to exit: "))
+            print("***********************")
+        except ValueError:
+            return 0
         if amount < 0:
             print(f"Invalid option: {amount}")
         elif amount == 0 or amount == "":
@@ -28,13 +31,16 @@ def withdraw(balance):
     os.system("cls")
     validoption = False
     while validoption != True:
-        print("***********************")
-        amount = float(input("Enter amount to withdraw or 0 to exit: "))
-        print("***********************")
+        try: # V2 - 03/19/2025 - RB - try/except on non float inputs
+            print("***********************")
+            amount = float(input("Enter amount to withdraw or 0 to exit: "))
+            print("***********************")
+        except ValueError:
+            return 0
         if amount > balance:
             print("Insufficent Funds")
         elif amount < 0:
-            print(f"Invalid Option: {amount}")
+            print(f"Invalid Option: {amount}") 
         elif amount == 0:
             return 0
         else:
